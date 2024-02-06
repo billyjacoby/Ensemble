@@ -473,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 49E09B8C2AD320F200B56CD3 /* macOS.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 93BYVNPTHR;
 			};
 			name = Debug;
 		};
@@ -480,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 49E09B8C2AD320F200B56CD3 /* macOS.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 93BYVNPTHR;
 			};
 			name = Release;
 		};
@@ -487,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 49E09BA52AD3240E00B56CD3 /* visionOS.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 93BYVNPTHR;
 			};
 			name = Debug;
 		};
@@ -494,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 49E09BA52AD3240E00B56CD3 /* visionOS.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 93BYVNPTHR;
 			};
 			name = Release;
 		};
