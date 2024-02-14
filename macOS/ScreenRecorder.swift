@@ -31,7 +31,7 @@ actor ScreenRecorder {
         let runningApp = NSWorkspace.shared.runningApplications.first { application in
             application.localizedName == appName
         }
-        runningApp?.activate()
+        runningApp?.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
         
     }
 

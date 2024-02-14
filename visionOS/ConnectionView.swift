@@ -40,8 +40,7 @@ struct ConnectionView: View {
 				.toolbar(.hidden)
 			},
 			detail: {
-                Circle().foregroundColor(.gray).fixedSize().position(CGPoint(x: 100.0, y: 0.0))
-				VStack {
+                				VStack {
 					List(endpoints.indices, id: \.self) {
 						let endpoint = endpoints[$0]
 						switch endpoint {
@@ -64,8 +63,7 @@ struct ConnectionView: View {
 					}
 					Text("To get started, open \(Bundle.main.name) on your Mac and select it from the list.")
 						.padding()
-                    
-				}
+                    				}
 				.navigationTitle("Available Macs")
             }
 		)
