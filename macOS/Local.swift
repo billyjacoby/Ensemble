@@ -176,6 +176,7 @@ class Local: LocalInterface, macOSInterface {
 
 	func _mouseMoved(parameters: M.MouseMoved.Request) async throws -> M.MouseMoved.Reply {
 		let window = try await windowManager.lookupWindow(byID: parameters.windowID)!
+        await screenRecorder.makeActive(window: window)
 		await eventDispatcher.injectMouseMoved(to: .init(x: window.frame.minX + window.frame.width * parameters.x, y: window.frame.minY + window.frame.height * parameters.y))
 
 		return .init()
@@ -183,7 +184,6 @@ class Local: LocalInterface, macOSInterface {
 
 	func _clicked(parameters: M.Clicked.Request) async throws -> M.Clicked.Reply {
 		let window = try await windowManager.lookupWindow(byID: parameters.windowID)!
-        await screenRecorder.makeActive(window: window)
 		await eventDispatcher.injectClick(at: .init(x: window.frame.minX + window.frame.width * parameters.x, y: window.frame.minY + window.frame.height * parameters.y))
 		return .init()
 	}
@@ -215,7 +215,6 @@ class Local: LocalInterface, macOSInterface {
 
 	func _dragChanged(parameters: M.DragChanged.Request) async throws -> M.DragChanged.Reply {
 		let window = try await windowManager.lookupWindow(byID: parameters.windowID)!
-        await screenRecorder.makeActive(window: window)
 
 		await eventDispatcher.injectDragChanged(to: .init(x: window.frame.minX + window.frame.width * parameters.x, y: window.frame.minY + window.frame.height * parameters.y))
 
