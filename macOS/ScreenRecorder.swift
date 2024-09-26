@@ -25,6 +25,15 @@ actor ScreenRecorder {
 		configuration.showsCursor = false
 		return try await SCScreenshotManager.captureSampleBuffer(contentFilter: filter, configuration: configuration)
 	}
+    
+    func makeActive(window: SCWindow) {
+        let appName = window.owningApplication?.applicationName
+        let runningApp = NSWorkspace.shared.runningApplications.first { application in
+            application.localizedName == appName
+        }
+        runningApp?.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
+        
+    }
 
 	struct Stream {
 		class Output: NSObject, SCStreamOutput {
